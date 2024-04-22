@@ -90,13 +90,13 @@ fig_choropleth.update_layout(
         'font': {'color': colors['text']}
     }
 )
-fig_heightxreach = px.scatter(df, x='Height_cm', y='Reach_cm', title='Height vs Reach',
-                             labels={'x': 'Height', 'y': 'Reach'}, color_discrete_sequence=['#1f77b4'],
-                             opacity=0.7,  trendline="ols")
-fig_heightxreach.update_layout(
-    xaxis=dict(showgrid=False),  # Remove gridlines from x-axis
-    yaxis=dict(showgrid=False)   # Remove gridlines from y-axis
-)
+#fig_heightxreach = px.scatter(df, x='Height_cm', y='Reach_cm', title='Height vs Reach',
+#                             labels={'x': 'Height', 'y': 'Reach'}, color_discrete_sequence=['#1f77b4'],
+#                             opacity=0.7,  trendline="ols")
+#fig_heightxreach.update_layout(
+#    xaxis=dict(showgrid=False),  # Remove gridlines from x-axis
+#    yaxis=dict(showgrid=False)   # Remove gridlines from y-axis
+#)
 
 # Create bar chart figure for zodiac signs
 sign_counts = df['Sign'].value_counts()
