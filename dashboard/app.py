@@ -22,11 +22,12 @@ avg_ko_per_sex_weight_class = avg_ko_per_sex_weight_class.sort_values(ascending=
 
 # Create bar plot using Plotly Express
 
-
-
+from flask import Flask
+flask_server = Flask(__name__)
 # Initialize the Dash app
 load_figure_template("sketchy")
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SKETCHY], assets_folder='assets')
+app = dash.Dash(__name__, server=flask_server, external_stylesheets=[dbc.themes.SKETCHY], assets_folder='assets')
+server = app.server
 fig_ko = px.bar(
     avg_ko_per_sex_weight_class.reset_index(),  # Reset index for labels
     x="sex_weight_class",
